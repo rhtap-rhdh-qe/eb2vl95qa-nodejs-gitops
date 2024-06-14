@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: eb2vl95qa-nodejs-gitops
+  description: This is GitOps manifest for eb2vl95qa-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: eb2vl95qa-nodejs
+    janus-idp.io/tekton: eb2vl95qa-nodejs 
+    backstage.io/kubernetes-id: eb2vl95qa-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:eb2vl95qa-nodejs
